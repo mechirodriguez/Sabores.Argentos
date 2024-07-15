@@ -1,0 +1,3482 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Sansita+Swashed:wght@300..900&display=swap');
+
+/**
+* Template Name: Groovin
+* Template URL: https://bootstrapmade.com/groovin-free-bootstrap-theme/
+* Updated: Mar 17 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Inter", sans-serif;
+  color: #444444;
+  background-color: #F5EFE8;
+}
+
+a {
+  color: #48B7D9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #298fae;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
+
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #48B7D9;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #F5EFE8;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #298fae;
+  color: #F5EFE8;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .back-to-top {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: rgba(0, 0, 0, 0.75);
+  transition: all 0.5s;
+  z-index: 997;
+  height: 80px;
+}
+
+#header .logo {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#header .logo a {
+  color: #F5EFE8;
+}
+
+#header .logo img {
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  #header {
+    max-width: 100vw;
+  }
+}
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar>ul>li {
+  white-space: nowrap;
+  padding: 10px 0 10px 22px;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  transition: 0.3s;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar>ul>li>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: #48B7D9;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar a:hover:before,
+.navbar li:hover>a:before,
+.navbar .active:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #F5EFE8;
+}
+
+.navbar .getstarted,
+.navbar .getstarted:focus {
+  padding: 8px 25px;
+  margin-left: 12px;
+  border-radius: 4px;
+  color: #F5EFE8;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid #48B7D9;
+}
+
+.navbar .getstarted:hover,
+.navbar .getstarted:focus:hover {
+  color: #F5EFE8;
+  background: #48B7D9;
+}
+
+.navbar .getstarted:hover:before,
+.navbar li:hover>.getstarted:before {
+  visibility: hidden;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 22px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #F5EFE8;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  color: #2a2a2a;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover>a {
+  color: #48B7D9;
+}
+
+.navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #F5EFE8;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #48B7D9;
+}
+
+@media (max-width: 768px) {
+  .navbar{
+    max-width: 100vw;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar-mobile ul {
+    height: 350px;
+  }
+  .navbar ul {
+    display: none;
+  }
+  .navbar-mobile .dropdown-active{
+    height: 140px;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(17, 17, 17, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #F5EFE8;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #2a2a2a;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+  color: #48B7D9;
+}
+
+.navbar-mobile>ul>li {
+  white-space: nowrap;
+  padding: 0;
+}
+
+.navbar-mobile a:hover:before,
+.navbar-mobile li:hover>a:before,
+.navbar-mobile .active:before {
+  visibility: hidden;
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+  margin: 15px;
+  color: #48B7D9;
+  padding-left: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #F5EFE8;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover>a {
+  color: #48B7D9;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(17, 17, 17, 0.8);
+  overflow: hidden;
+  padding: 0;
+}
+
+#hero .carousel-item {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: 0.3;
+}
+
+#hero .carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#hero .carousel-container {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  padding-left: 170px;
+  padding-top: 320px;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .carousel-content {
+  text-align: left;
+}
+
+#hero h2 {
+  color: #0D0D0D;
+  margin-bottom: 30px;
+  font-family: "Sansita Swashed";
+  font-size: 58px;
+  font-weight: medium;
+}
+
+#hero h2 span {
+  color: #48B7D9;
+}
+
+#hero p {
+  width: 80%;
+  animation-delay: 0.4s;
+  margin: 0 auto 30px 10px;
+  font-family: "Inter";
+  font-size: 24px;
+  text-align: left;
+  color: #0D0D0D;
+}
+
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-start,
+#hero .carousel-inner .active.carousel-item-end {
+  opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-start,
+#hero .carousel-inner .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-start,
+#hero .carousel-inner .active.carousel-item-end {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+
+#hero .carousel-indicators li {
+  list-style-type: none;
+  cursor: pointer;
+  background: #F5EFE8;
+  overflow: hidden;
+  border: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+#hero .carousel-indicators li.active {
+  opacity: 1;
+  background: none;
+}
+
+#hero .btn-get-started {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px 12px 32px;
+  border-radius: 30px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #F5EFE8;
+  animation-delay: 0.8s;
+  text-transform: uppercase;
+  border: 2px solid #48B7D9;
+  background: #48B7D9;
+}
+
+#hero .btn-get-started:hover {
+  background: #298fae;
+  border-color: #298fae;
+  color: #F5EFE8;
+}
+
+@media (max-width: 768px) {
+  #hero .carousel-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding: 150px 40px 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #hero .carousel-content {
+    text-align: center;
+  }
+  #hero h2 {
+    font-size: 35px;
+    width: 300px;
+    margin:0;
+  }
+}
+#hero p {
+  text-align: center;
+  width: 300px;
+  animation-delay: 0.4s;
+  margin: 20px 0 20px 0;
+  font-family: "Inter";
+  font-size: 18px;
+  color: #0D0D0D;
+}
+
+
+@media (min-width: 1024px) {
+  #hero p {
+    width: 90%;
+  }
+
+  #hero .carousel-control-prev,
+  #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #F5EFE8;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-family: "Sansita Swashed";
+  font-size: 32px;
+  font-weight: medium;
+  text-transform: initial;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #0D0D0D;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+.clients {
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients img {
+  max-width: 55%;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  padding: 15px 0;
+  filter: grayscale(100);
+}
+
+.clients img:hover {
+  filter: none;
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .clients img {
+    max-width: 80%;
+  padding: 30px 0;
+  margin-top: -15px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about {
+  background-color: #F5EFE8;
+  margin-top: -10px;
+}
+.about .container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
+.about .container .nosotros-imagen {
+  background-image: url(../img/about.jpg);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: -30px;
+  width: 900px;
+  height: 450px;
+}
+
+.about .contenido {
+  padding: 30px 0;
+  margin-left: 60px;
+  width: 950px;
+}
+
+.about .contenido h3 {
+  font-family: "Sansita Swashed";
+  font-size: 32px;
+  font-weight: medium;
+  text-transform: initial;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #0D0D0D;
+}
+
+.about .contenido p {
+  margin-bottom: 0;
+  font-family: "Inter";
+  font-size: 18px;
+}
+
+.about .contenido .icon-box {
+  margin-top: 25px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 0 0 0;
+}
+
+.about .contenido .icon-box h4 {
+  font-family: "Outfit";
+  font-size: 20px;
+  font-weight: 500;
+  margin: 5px 0 10px 10px;
+}
+
+.about .contenido .icon-box img {
+  width: 80px;
+}
+
+.about .contenido .icon-box p {
+  font-size: 15px;
+  color: #848484;
+  margin-left: 60px;
+}
+
+
+@media (max-width: 768px) {
+  .about{
+    margin-bottom: -60px;
+  }
+  .about .container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100vw;
+  }
+  .about .container .nosotros-imagen {
+  max-width: 100vw;
+    height: 450px;
+    
+}
+.about .contenido {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 30px;
+  margin-left: 0;
+  max-width: 100vw;
+}
+.about .contenido .row{
+  max-width: 100vw;
+}
+
+.about .contenido p {
+  width: 280px;
+  margin-right: 0;
+  font-size: 16px;
+}
+.about .contenido .icon-box {
+  width: 300px;
+}
+.about .image {
+  text-align: center;
+  max-width: 100vw;
+}
+
+.about .image img {
+  max-width: 80%;
+}
+.about .contenido .icon-box{
+  margin-top: 25px;
+}
+.about .contenido .icon-box h4 {
+  font-size: 18px;
+}
+.about .contenido .icon-box img {
+  width: 60px;
+}
+}
+
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats {
+  position: relative;
+  padding: 120px 0;
+  margin-top: 10px;
+}
+
+.stats img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.stats:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 40%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.stats .container {
+  position: relative;
+  z-index: 3;
+}
+
+.stats .stats-item {
+  padding: 30px;
+  width: 100%;
+}
+
+.stats .stats-item span {
+  font-size: 48px;
+  display: block;
+  color: #F5EFE8;
+  font-weight: 700;
+}
+
+.stats .stats-item p {
+  padding: 0;
+  margin: 0;
+  font-family: "Outfit";
+  font-size: 20px;
+  font-weight: 500;
+  color: color-mix(in srgb, #F5EFE8, transparent 20%);
+}
+
+@media (max-width: 768px) {
+  .stats .stats-item span {
+    font-size: 42px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Servicios
+--------------------------------------------------------------*/
+.Servicios {
+  margin-top: 15px;
+}
+.Servicios .box {
+  padding: 50px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+}
+
+.Servicios .box span {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-top: -50px;
+  margin-bottom: -60px;
+  height: 200px;
+}
+
+.Servicios .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #0D0D0D;
+}
+
+.Servicios .box p {
+  color: color-mix(in srgb, #0D0D0D, transparent 60%);
+  font-family: "Inter";
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.Servicios .box:hover {
+  border: 4px solid #F4B609;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+.Servicios .box:hover span {
+  margin-top: -15px;
+}
+.Servicios .box:hover h4,
+.Servicios .box:hover p {
+  color: #0D0D0D;
+}
+
+@media (max-width: 768px) {
+  .Servicios {
+    margin-top: 0;
+  }
+  .Servicios .box span {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -10px;
+    margin-top: -50px;
+    margin-bottom: -60px;
+    height: 180px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Productos
+--------------------------------------------------------------*/
+.productos{
+	width: 100%;
+	padding: 0px 8%;
+  margin-top: 20px;
+}
+.productos .productos-container{
+	position: relative;
+	margin-top: -30px;
+  padding: 0 70px 0 70px;
+}
+.productos .productos-container .producto-card{
+	padding: 12px;
+}
+.productos .producto-card .imagen{
+	padding: 20px;
+}
+.productos .imagen .imagen-producto{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.productos .imagen .imagen-producto img{
+	width: 300px;
+}
+.productos .titulo-producto{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.productos .titulo-producto span{
+	font-family: "Inter";
+	font-size: 22px;
+	font-weight:600;
+	color: #0D0D0D;
+} 
+
+.productos .titulo-producto .desc-producto{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+} 
+
+.productos .titulo-producto .desc-producto span {
+	font-family: "Outfit";
+	font-size: 18px;
+	font-weight: 450;
+	color: color-mix(in srgb, #0D0D0D, transparent 70%);
+	margin-top: 8px;
+}
+.productos .titulo-producto .desc-producto  img{
+	width: 25px;
+	margin-right: 2px;
+	margin-top: 10px;
+}
+
+.productos .owl-nav{
+	position: absolute;
+	right: 100px;
+	bottom: -10px;
+  color: color-mix(in srgb, #0D0D0D, transparent 70%);
+}
+.productos .owl-nav button{
+	border-radius: 50% !important;
+}
+.productos .owl-nav .owl-prev i,
+.productos .owl-nav .owl-next i{
+	padding: 10px !important;
+	border-radius: 50%;
+	font-size: 18px !important;
+	background-color: none !important;
+	color: var(--primary-clr);
+	cursor: pointer;
+	transition: 0.4s;
+}
+.productos .owl-nav .owl-prev i:hover,
+.productos .owl-nav .owl-next i:hover{
+	background-color: #48B7D9 !important;
+	color: #F5EFE8;
+}
+.productos .owl-dots{
+	margin-top: 20px;
+}
+.productos .owl-dots .owl-dot span{
+	background-color: color-mix(in srgb, #0D0D0D, transparent 90%) !important;
+	padding: 6px !important;
+}
+.productos .owl-dot.active span{
+	background-color: #48B7D9 !important;
+}
+.productos .catalogo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+.productos .btn-catalogo {
+	font-family: "Outfit", sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+	line-height: 1;
+	margin: 10px;
+	color: #F5EFE8;
+	border: 2px solid #48B7D9;
+	background: #48B7D9;
+}
+
+.productos .btn-catalogo:hover {
+	background: #298fae;
+	border-color: #298fae;
+	color: #F5EFE8;
+}
+@media (max-width: 768px) {
+  .productos{
+    max-width: 100vw;
+  }
+  .productos .productos-container{
+    position: relative;
+    margin-top: -30px;
+    padding: 0 10px 0 10px;
+  }
+  .productos .imagen .imagen-producto img{
+    width: 300px;
+    margin-left: 5px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Pricing-img-cursos
+--------------------------------------------------------------*/
+#pricing-img {
+  position: relative;
+  background-image: url(../img/curso.png);
+  background-position: center center;
+  width: 100%;
+  height: 360px;
+  z-index: 1;
+  margin-top: 30px;
+}
+
+/*--------------------------------------------------------------
+# Pricing
+--------------------------------------------------------------*/
+.pricing{
+  margin-top: -190px;
+  height: auto;
+}
+.pricing .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing .section-title {
+  position: relative;
+  z-index: 2;
+  margin-top: -90px;
+}
+
+.pricing .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 70px;
+  padding: 30px;
+  background: #F5EFE8;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.pricing .box img {
+  width: 260px;
+  margin-top: -40px;
+  margin-bottom: 5px;
+}
+
+.pricing .section-title h2 {
+  color: #F5EFE8;
+  font-family: "Sansita Swashed";
+  text-transform: initial;
+  font-size: 52px;
+  font-weight: normal;
+}
+.pricing .box h3 {
+  font-family: "Sansita Swashed";
+  padding: 15px;
+  margin-top: 0;
+  font-size: 26px;
+  color: #0D0D0D;
+}
+
+.pricing .box h4 {
+  color: #48B7D9 ;
+  font-family: "Inter";
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.pricing .box h4 sup {
+  font-size: 20px;
+  top: -15px;
+  left: -3px;
+}
+
+.pricing .box span {
+  position:center center;
+  font-family: "Outfit";
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pricing .box p {
+  margin-top: -25px;
+  width: 300px;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  color: color-mix(in srgb, #0D0D0D, transparent 60%);
+}
+.pricing .box .semanas{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+  margin-top: -10px;
+} 
+
+.pricing .box .semanas span {
+	font-family: "Outfit";
+	font-size: 18px;
+	font-weight: 450;
+	color: #0D0D0D;
+	margin-top: 8px;
+}
+.pricing .box .semanas img{
+	width: 30px;
+	margin-right: 5px;
+	margin-top: 10px;
+}
+
+.pricing .box .btn-wrap {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pricing .box .btn-buy {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 14px;
+  background: #F5EFE8;
+  border: 2px solid #48B7D9;
+  border-radius: 30px;
+  color: #48B7D9;
+  transition: 0.3s;
+  padding: 6px 20px;
+}
+
+.pricing .box .btn-buy:hover {
+  background: #298fae;
+  border-color: #298fae;
+  color: #F5EFE8;
+}
+
+.pricing .box:hover{
+  border: 4px solid #F4B609;
+}
+
+.pricing .recommended {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #F5EFE8;
+}
+.pricing .recommended .etiqueta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 35px;
+  right: -40px;
+  background: #F4B609;
+  width: 180px;
+  height: 30px;
+}
+
+.pricing .recommended .etiqueta span {
+  position:center center;
+  font-family: "Outfit";
+  font-size: 14px;
+  font-weight: 500;
+}
+.pricing .recommended img {
+  width: 300px;
+  margin-top: -40px;
+  margin-bottom: 5px;
+} 
+
+.pricing .recommended h3 {
+  font-family: "Sansita Swashed";
+  font-size: 30px;
+  color: #0D0D0D;
+}
+.pricing .recommended h4 {
+  color: #F4B609 ;
+  font-family: "Inter";
+  font-size: 55px;
+  font-weight: bold;
+  margin-top: -5px;
+}
+.pricing .recommended p {
+  margin-top: -25px;
+  width: 300px;
+  font-family: "Inter";
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
+  color: color-mix(in srgb, #0D0D0D, transparent 60%);
+}
+.pricing .recommended .semanas{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+  margin-top: -10px;
+} 
+
+.pricing .recommended .semanas span {
+	font-family: "Outfit";
+	font-size: 18px;
+	font-weight: 450;
+	color: #0D0D0D;
+	margin-top: 8px;
+}
+.pricing .recommended .semanas  img{
+	width: 30px;
+	margin-right: 5px;
+	margin-top: 10px;
+}
+
+.pricing .recommended .btn-buy {
+  font-family: "Outfit";
+  font-size: 14px;
+  background: #48B7D9;
+  border-radius: 30px;
+  color: #F5EFE8;
+  margin-top: 20px;
+  transition: 0.3s;
+  padding: 6px 20px;
+}
+
+.pricing .recommended .btn-buy:hover {
+  background: #298fae;
+  color: #F5EFE8;
+}
+
+@media (max-width: 768px) {
+  #pricing-img {
+    position: relative;
+    background-image: url(/assets/img/curso.png);
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    z-index: 1;
+  }
+  .pricing .section-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pricing .section-title h2 {
+    color: #F5EFE8;
+    font-family: "Sansita Swashed";
+    text-transform: initial;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: normal;
+  }
+  .pricing .row {
+    margin-top: 20px;
+  }
+  .pricing .box {
+  max-width: 100vw;
+    margin-top: 10px;
+  }
+  .pricing .recommended h4 {
+    font-size: 50px;
+  }
+  .pricing .box h4 {
+    font-size: 40px;
+  }
+  .pricing .box:hover{
+  max-width: 100vw;
+  }
+}
+
+/*--------------------------------------------------------------
+# Testimonios
+--------------------------------------------------------------*/
+.testimonials-section{
+	width: 100%;
+  padding: 0 105px 0 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.testimonials-section .testimonials-container{
+	position: relative;
+  margin-left: -15px;
+}
+.testimonials-section .testimonials-container .testimonial-card{
+  margin: 0 0 30px;
+	padding: 0 12px;
+  width: 430px;
+}
+.testimonials-section .testimonial-card .test-card-body{
+	background-color: var(--card-clr);
+	box-shadow: 2px 2px 18px rgba(0,0,0,0.12);
+	padding: 20px;
+}
+.testimonials-section .test-card-body .quote{
+	display: flex;
+	align-items: center;
+}
+.testimonials-section .test-card-body .quote img{
+  width: 80px;
+}
+.testimonials-section .test-card-body .quote h2{
+  margin-top: 10px;
+  font-family: "Inter";
+  font-size: 22px;
+  font-weight: medium;
+	color: var(--heading-clr);
+}
+.testimonials-section .test-card-body p{
+  font-family: "Inter";
+	margin: 10px 0px 15px 5px;
+	font-size: 16px;
+	line-height: 1.5;
+	color: color-mix(in srgb, #0D0D0D, transparent 60%);
+}
+.testimonials-section .test-card-body p span{
+  font-family: "Outfit";
+	margin: 10px 0px 15px;
+	font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+	line-height: 1.5;
+	color: color-mix(in srgb, #0D0D0D, transparent 50%);
+}
+.testimonials-section .test-card-body .ratings{
+	margin-top: 20px;
+}
+.testimonials-section .test-card-body .ratings i{
+	font-size: 17px;
+	color: #F4B609;
+	cursor: pointer;
+}
+.testimonials-section .testimonial-card .profile{
+	display: flex;
+	align-items: center;
+	margin-top: 25px;
+}
+.testimonials-section .profile .profile-image{
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 15px;
+}
+.testimonials-section .profile .profile-image img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.testimonials-section .profile .profile-desc{
+	display: flex;
+	flex-direction: column;
+}
+.testimonials-section .profile-desc span:nth-child(1){
+  font-family: "Inter";
+	font-size: 24px;
+	font-weight: bold;
+	color: var(--primary-clr);
+}
+.testimonials-section .profile-desc span:nth-child(2){
+  font-family: "Outfit";
+	font-size: 14px;
+	color: color-mix(in srgb, #0D0D0D, transparent 60%);
+}
+.testimonials-section .owl-nav{
+	position: absolute;
+  margin-top: 10px;
+	right: 20px;
+	bottom: -10px;
+  color: color-mix(in srgb, #0D0D0D, transparent 70%);
+}
+.testimonials-section .owl-nav button{
+	border-radius: 50% !important;
+}
+.testimonials-section .owl-nav .owl-prev i,
+.testimonials-section .owl-nav .owl-next i{
+	padding: 10px !important;
+	border-radius: 50%;
+	font-size: 18px !important;
+	background-color: var(--card-clr) !important;
+	color: var(--primary-clr);
+	cursor: pointer;
+	transition: 0.4s;
+}
+.testimonials-section .owl-nav .owl-prev i:hover,
+.testimonials-section .owl-nav .owl-next i:hover{
+	background-color: #48B7D9 !important;
+	color: #F5EFE8;
+}
+.testimonials-section .owl-dots{
+	margin-top: 35px;
+}
+
+.testimonials-section .owl-dots .owl-dot span{
+	background-color: color-mix(in srgb, #0D0D0D, transparent 90%)!important;
+	padding: 6px !important;
+}
+.testimonials-section .owl-dot.active span{
+	background-color: #48B7D9 !important;
+}
+
+@media (max-width: 991px) {
+	.testimonials-section{
+    display: flex;
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+	}
+  .testimonials-section .section-title {
+    width: 300px;
+  }
+  .testimonials-section .section-title h2{
+    font-size: 28px;
+  }
+	.testimonials-section .testimonials-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		margin-top: -40px;
+    width: 340px;
+	}
+	.testimonials-section .testimonials-container .testimonial-card{
+		width: 300px;
+		padding: 20px;
+    margin-left: 25px;
+	}
+}
+
+
+/*--------------------------------------------------------------
+# Redes
+--------------------------------------------------------------*/
+.portfolio {
+  margin-top: 5px;
+}
+.portfolio .section-title span {
+  font-family: "Inter";
+  color: #48B7D9;
+  font-weight: 500;
+}
+
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 15px 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: "Outfit";
+  color: color-mix(in srgb, #0D0D0D, transparent 40%);
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+.portfolio #portfolio-flters li:hover {
+  color: #F5EFE8;
+  background: #298fae;
+  border-radius: 30px;
+}
+.portfolio #portfolio-flters li.filter-active {
+  color: #F5EFE8;
+  background: #48B7D9;
+  border-radius: 30px;
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(42, 42, 42, 0.7);
+}
+
+.portfolio .portfolio-wrap::before {
+  content: "";
+  border: 4px solid #F4B609;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: all ease-in-out 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 25px 20px;
+  background-color: color-mix(in srgb, #0D0D0D, transparent 70%);
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-family: "Inter";
+  font-size: 20px;
+  color: #F5EFE8;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: color-mix(in srgb, #F5EFE8, transparent 20%);
+  font-family: "Outfit";
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+.portfolio .portfolio-wrap .portfolio-info .title{
+  font-family: "Inter";
+  font-size: 15px;
+  font-weight: 300;
+  color: #0D0D0D;
+}
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #F5EFE8;
+  margin: 0 5px 0 0;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: #298fae;
+}
+
+.portfolio .portfolio-wrap:hover::before {
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.2);
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+}
+
+
+/*--------------------------------------------------------------
+# Eventos
+--------------------------------------------------------------*/
+.eventos{
+  margin-top: -70px;
+}
+.eventos .card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  max-width: 1350px;
+  margin: -15px auto;
+  padding: 20px;
+  gap: 30px;
+}
+.eventos .card-list .card {
+  background: #F5EFE8;
+  border: none;
+  border-radius: 0;
+  padding: 26px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 520px;
+}
+
+.eventos .card-list .hover:hover {
+  border: 4px solid #F4B609;
+}
+
+.eventos .card-list .card-item img {
+  width: 100%;
+  height: 250px;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: -40px;
+  margin-bottom: -40px;
+}
+.eventos .card-list .card-item span {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 8px 15px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  font-family: "Outfit";
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.eventos .card-list .developer {
+  background-color: color-mix(in srgb, #F4B609, transparent 70%); 
+  color: #ba8a06;
+}   
+.eventos .card-list .designer {
+  background-color: color-mix(in srgb, #F4B609, transparent 70%); 
+  color: #ba8a06;
+}
+.eventos .card-list .editor {
+  background-color: color-mix(in srgb, #F4B609, transparent 70%); 
+  color: #ba8a06;
+}
+.eventos .card-list .carnes {
+  background-color: color-mix(in srgb, #F4B609, transparent 70%); 
+  color: #ba8a06;
+}   
+
+.eventos .card-item h3 {
+  color: #0D0D0D;
+  font-family: "Sansita Swashed";
+  font-size: 25px;
+  margin-top: 28px;
+}
+.eventos .card-item p {
+  color: color-mix(in srgb, #0D0D0D, transparent 60%);
+  font-family: "Inter";
+  font-size: 14px;
+  margin-top: 20px;
+}
+.eventos .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  height: 35px;
+  width: 110px;
+  color: #48B7D9;
+  border: 1px solid #48B7D9;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+.eventos .card-list .card-icon:hover {
+  background: #298fae;
+  color: #F5EFE8; 
+}
+
+.eventos .card-list .vinos {
+  background: #0D0D0D;
+  padding: 26px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.eventos .card-list .vinos {
+  background: #F5EFE8;
+  padding: 26px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 520px;
+}
+
+.eventos .vinos .flash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(40deg);
+  position: relative;
+  top: 10px;
+  right: -120px;
+  background: #F4B609;
+  width: 190px;
+  height: 30px;
+}
+.eventos .vinos .flash h6 {
+  position:center center;
+  margin-top: 6px;
+  font-family: "Outfit";
+  color: color-mix(in srgb, #0D0D0D, transparent 40%);
+  font-size: 14px;
+  font-weight: 500;
+}
+.eventos .vinos img {
+  width: 100%;
+  height: 220px;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: -40px;
+  margin-bottom: -30px;
+}
+.eventos .vinos h3 {
+  color: #0D0D0D;
+  font-family: "Sansita Swashed";
+  font-size: 25px;
+  margin-top: 28px;
+  text-transform: capitalize;
+}
+.eventos .vinos p {
+  color: color-mix(in srgb, #0D0D0D, transparent 60%);
+  font-family: "Inter";
+  font-size: 14px;
+  margin-top: 20px;
+}
+.eventos .vinos span {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 8px 15px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  font-family: "Outfit";
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.eventos .vinos .card-item {
+  margin-top: -10px;
+}
+
+.eventos .vinos .card-icon {
+  margin-top: 32px;
+}
+
+
+@media (max-width: 1200px) {
+  .eventos .card-list .card-item {
+      padding: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .eventos{
+    margin-top: -90px;
+    mask-size: 100vw;
+  }
+  .eventos .card-list {
+      margin: -40px auto;
+  }
+  .eventos .card-list .card-item{
+    padding: 0 10px 0 0;
+  }
+  .eventos .card-list .card-item img {
+    margin-top: -50px;
+  }
+  .eventos .vinos .flash {
+    right: -130px;
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team {
+  margin-top: -50px;
+}
+
+.team .section-title h2{
+  color: #0D0D0D;
+}
+
+.team .section-title p{
+  color: #0D0D0D;
+}
+.team .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+
+.team .contenedor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  margin-right: 60px;
+  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.team .member {
+  width: 230px;
+  margin-right: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 100;
+  position: relative;
+}
+
+.team .member .member-info {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+}
+
+.team .member-info-content {
+  transition: margin 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.team .member:hover .member-info {
+  background: color-mix(in srgb, #0D0D0D, transparent 60%);
+  border: 4px solid #F4B609;
+  border-radius: 100%;
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.team .member:hover .member-info-content {
+  margin-top: 0;
+  transition: margin 0.4s;
+}
+
+.team .member img{
+  border-radius: 100%;
+}
+
+
+.team .member-info-content h4 {
+  font-weight: 700;
+  font-family: "Inter";
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #0D0D0D;
+}
+
+.team .member-info-content span {
+  font-family: "Outfit";
+  font-size: 14px;
+  color: color-mix(in srgb, #0D0D0D, transparent 40%);
+  text-transform: uppercase;
+}
+
+.team .member .social {
+  margin-top: 15px;
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #F5EFE8;
+}
+
+.team .member .social a:hover {
+  color: #48B7D9;
+}
+
+.team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+.team .conoce-equipo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+.team .btn-equipo {
+	font-family: "Outfit", sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+	line-height: 1;
+	margin: 10px;
+	color: #F5EFE8;
+	border: 2px solid #48B7D9;
+	background: #48B7D9;
+}
+
+.team .btn-equipo:hover {
+	background: #298fae;
+	border-color: #298fae;
+	color: #F5EFE8;
+}
+
+@media screen and (max-width: 768px) {
+  .team{
+    margin-top: -70px;
+  }
+  .team .row {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .team .contenedor{
+    margin-right: 0px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.call-to-action{
+  margin-top: -40px;
+}
+.call-to-action .contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../img/calltoaction.png);
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+.call-to-action .contenedor h2{
+  font-family: "Sansita Swashed";
+  font-size: 45px;
+  color: #F5EFE8;
+  text-shadow: 3px 3px 10px color-mix(in srgb, #0D0D0D, transparent 30%);
+}
+
+@media screen and (max-width: 768px) {
+  .call-to-action .contenedor h2{
+    font-size: 40px;
+    text-align: center;
+  }
+  .call-to-action .contenedor{
+    background-position-x: -1100px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
+.contact .container .contacto-imagen {
+  background-image: url(../img/mate.png);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  width: 500px;
+  height: 500px;
+}
+
+.contact .contenido {
+  padding: 30px 0;
+  margin-left: 60px;
+  width: 950px;
+}
+
+.contact .contenido h3 {
+  font-family: "Sansita Swashed";
+  font-size: 32px;
+  font-weight: medium;
+  text-transform: initial;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #0D0D0D;
+}
+
+.contact .contenido p {
+  margin-bottom: 0;
+  font-family: "Inter";
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #F5EFE8;
+  background: #83160c;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+/*.contact .php-email-form .error-message br+br {
+  margin-top: 25px;
+}*/
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #F5EFE8;
+  background: #F4B609;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #F5EFE8;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #F4B609;
+  border-top-color: #F5EFE8;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  height: auto;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: #48B7D9;
+}
+.contact .text-center{
+  width:120px;
+}
+.contact .php-email-form button[type=submit] {
+  background: #48B7D9;
+  font-family: "Outfit";
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  padding: 5px 30px;
+  color: #F5EFE8;
+  transition: 0.4s;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #298fae;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact .container{
+    flex-direction: column;
+    max-width: 100vw;
+  }
+  .contact .contenido{
+    max-width: 90vw;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 -20px 0;
+    padding: 0 10px;
+  }
+  .contact .contacto-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+  }
+  .contact .container .contacto-imagen {
+    background-image: url(../img/mate.png);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    max-width: 100vw;
+    height: 400px;
+  }
+  .contact .contenido p {
+    width: 300px;
+  }
+  .contact .contenido h3 {
+  font-size: 28px;
+  max-width: 100vw;
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #0D0D0D;
+  padding: 0 0px 30px 10px;
+  color: #F5EFE8;
+  font-size: 14px;
+}
+
+#footer .footer-top {
+  background: #0D0D0D;
+  border-bottom: 1px solid #2f2f2f;
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info img{
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Inter", sans-serif;
+  color: #F5EFE8;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #2a2a2a;
+  color: #F5EFE8;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #48B7D9;
+  color: #F5EFE8;
+  text-decoration: none;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #F5EFE8;
+  position: relative;
+  padding-bottom: 12px;
+  font-family: "Inter";
+  max-width: 200px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: -70px;
+  max-width: 300px;
+}
+
+#footer .footer-top .footer-links ul {
+  font-family: "Outfit";
+  font-weight: 300;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 200px;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #F4B609;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #F5EFE8;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #48B7D9;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #F5EFE8;
+}
+
+
+
+/*---
+# ACA ARRANCA PAG DETALLE
+---------------------------*/
+
+
+/*--------------------------------------------------------------
+# Encabezado
+--------------------------------------------------------------*/
+#encabezado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../img/encabezadodesk.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 410px;
+}
+
+#encabezado .info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+#encabezado .info h2{
+  font-family: "Sansita Swashed";
+  font-size: 50px;
+  color: #F5EFE8;
+}
+
+#encabezado .info p{
+  margin-top: 10px;
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 300;
+  color: #F5EFE8;
+}
+
+#encabezado .info span{
+  font-family: "Outfit";
+  font-size: 20px;
+  font-weight: 300;
+  color: #F4B609;
+}
+.button-redondo {
+  width: 50px; /* Ancho del botón */
+  height: 50px; /* Alto del botón */
+  border-radius: 50%; /* Hace que el botón sea redondo */
+  background-color: color-mix(in srgb, #F5EFE8, transparent 60%); /* Color de fondo */
+  color: #F5EFE8; /* Color de texto */
+  border: none; /* Quita el borde */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  font-size: 40px; /* Tamaño de la fuente */
+  font-weight: 300;
+  transform: rotate(180deg);
+  margin-top: 30px;
+  margin-left: 140px;
+}
+
+.button-redondo:hover {
+  background-color: #48B7D9; /* Cambia el color de fondo al pasar por encima */
+  color: #F5EFE8;
+}
+
+@media (max-width: 768px) {
+  #encabezado {
+    background-image: url(../img/encabezadomobile.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 760px;
+    text-align: center;
+  }
+  #encabezado .info h2{
+    margin-top: -280px;
+    font-size: 40px;
+    width: 250px;
+  }
+  #encabezado .info p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    width: 200px;
+  }
+  #encabezado .info span{
+    margin-top: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+#intro {
+  margin-top: 10px;
+}
+#intro .portfolio-details-slider .swiper-slide{
+  height: 560px;
+}
+
+#intro .portfolio-details-slider img {
+  width: 100%;
+}
+
+#intro .swiper-pagination {
+  margin-top: 120px;
+  position: relative;
+}
+
+#intro .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(in srgb, #0D0D0D, transparent 90%);
+  opacity: 1;
+}
+
+#intro .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #48B7D9;
+}
+#intro .col-lg-4{
+  padding-left: 30px;
+}
+
+#intro .portfolio-info {
+  margin-top: 30px;
+  padding: 30px 30px;
+  box-shadow: 0px 0 30px rgba(42, 42, 42, 0.08);
+}
+
+#intro .portfolio-info h3 {
+  font-family: "Inter";
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F5EFE8;
+  color: #0D0D0D;
+}
+
+#intro .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+#intro .portfolio-info ul i{
+  margin-right: 10px;
+  color: #F4B609;
+  font-size: 18px;
+}
+
+#intro .portfolio-info ul strong{
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#intro .portfolio-info ul li+li {
+  margin-top: 10px;
+  font-family: "Outfit";
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#intro .portfolio-info ul span {
+  font-family: "Outfit";
+  font-size: 16px;
+  font-weight: 400;
+  color: #48B7D9;
+}
+#intro .portfolio-description {
+  padding-top: 10px;
+}
+
+#intro .portfolio-description h2 {
+  font-family: "Sansita Swashed";
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: #0D0D0D;
+}
+
+#intro .portfolio-description p {
+  padding: 0;
+}
+
+#intro .inscribite{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+	margin-top: 20px;
+}
+
+#intro .btn-inscribite {
+	font-family: "Outfit", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+	line-height: 1;
+	margin: 10px;
+	color: #F5EFE8;
+	border: 2px solid #48B7D9;
+	background: #48B7D9;
+}
+
+#intro .btn-inscribite:hover {
+	background: #298fae;
+	border-color: #298fae;
+	color: #F5EFE8;
+}
+@media (max-width: 768px) {
+  #intro .col-lg-8{
+    order: 2;
+  }
+  #intro .swiper-pagination {
+  margin-top: -270px;
+}
+  #intro .col-lg-4{
+    text-align: center;
+    margin-top: -20px;
+  order: 1;
+}
+#intro .portfolio-info ul {
+  text-align: left;
+}
+}
+/*--------------------------------------------------------------
+# Contenido
+--------------------------------------------------------------*/
+.temas {
+  margin-top: -60px;
+}
+.temas .faq-list {
+  padding: 0 10px;
+}
+
+.temas .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.temas .faq-list li+li {
+  margin-top: 15px;
+}
+
+.temas .faq-list li {
+  padding: 20px;
+  border-radius: 4px;
+  position: relative;
+  background: #F5EFE8;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.15);
+}
+
+.temas .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 0 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.temas .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #9cdc66;
+}
+
+.temas .faq-list .icon-show,
+.temas .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.temas .faq-list p {
+  font-family: "Inter";
+  font-size: 16px;
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.temas .faq-list .icon-show {
+  display: none;
+}
+
+.temas .faq-list a.collapsed {
+  color: #343a40;
+}
+
+.temas .faq-list a.collapsed:hover {
+  color: #48B7D9;
+}
+
+.temas .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.temas .faq-list a.collapsed .icon-close {
+  display: none;
+}
+@media (max-width: 768px) {
+  .temas{
+  margin-top: -80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .temas .faq-list {
+    padding: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Experto
+--------------------------------------------------------------*/
+.experto {
+  background-color: #F5EFE8;
+  margin-top: -10px;
+}
+.experto .container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
+.experto .container .nosotros-imagen {
+  background-image: url(../img/expertos1.png);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: -30px;
+  width: 1000px;
+  height: 400px;
+}
+
+.experto .contenido {
+  padding: 30px 0;
+  margin-left: 60px;
+  width: 950px;
+}
+
+.experto .contenido h3 {
+  font-family: "Sansita Swashed";
+  font-size: 32px;
+  font-weight: medium;
+  text-transform: initial;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #0D0D0D;
+}
+
+.experto .contenido p {
+  margin-bottom: 0;
+  font-family: "Inter";
+  font-size: 18px;
+  width: 610px;
+}
+
+
+@media (max-width: 991px) {
+  .experto .image {
+    text-align: center;
+  }
+
+  .experto .image img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .experto{
+    margin-top: -80px;
+  }
+  .experto .container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100vw;
+  }
+  .experto .container .nosotros-imagen {
+    max-width: 100vw;
+      height: 450px;
+      background-position-y: 0px;
+}
+.experto .contenido {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 30px;
+  margin-left: 0;
+  max-width: 100vw;
+}
+
+.experto .contenido p {
+  width: 280px;
+  margin-right: 0;
+  font-size: 16px;
+}
+}
+
+/*--------------------------------------------------------------
+# Frase
+--------------------------------------------------------------*/
+#frase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../img/fondofrase.png);
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 300px;
+  margin-top: 20px;
+}
+
+#frase .info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#frase .info h2{
+  font-family: "Sansita Swashed";
+  font-size: 40px;
+  font-weight: normal;
+  text-align: center;
+  color: #F5EFE8;
+  text-shadow: 4px 4px 10px #0D0D0D;
+  width: 1100px;
+}
+
+@media (max-width: 768px) {
+  #frase {
+    margin-top: -20px;
+    height: 400px;
+  }
+  #frase .info h2{
+    font-size: 30px;
+    width: 310px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.beneficios {
+  margin-top: 30px;
+  padding-bottom: 0;
+}
+
+.beneficios .section-title h2{
+  color: #0D0D0D;
+}
+
+.beneficios .section-title p{
+  color: #0D0D0D;
+}
+.beneficios .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+.beneficios .contenedor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  padding: 0 20px;
+  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.beneficios .member {
+  width: 250px;
+  margin-right: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 100;
+  position: relative;
+}
+
+.beneficios .member .member-info {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+}
+
+.beneficios .member-info-content {
+  transition: margin 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.beneficios .member:hover .member-info {
+  background: color-mix(in srgb, #0D0D0D, transparent 60%);
+  border: 4px solid #F4B609;
+  border-radius: 100%;
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.beneficios .member:hover .member-info-content {
+  margin-top: 0;
+  transition: margin 0.4s;
+}
+
+.beneficios .member img{
+  border-radius: 100%;
+}
+
+
+.beneficios .member-info-content h4 {
+  font-weight: 500;
+  font-family: "Inter";
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #0D0D0D;
+}
+
+.beneficios .member-info-content span {
+  font-family: "Outfit";
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 300;
+  color: color-mix(in srgb, #0D0D0D, transparent 40%);
+  width: 400px;
+}
+
+.beneficios .member .social {
+  margin-top: 15px;
+}
+
+.beneficios .member .social a {
+  transition: color 0.3s;
+  color: #F5EFE8;
+}
+
+.beneficios .member .social a:hover {
+  color: #48B7D9;
+}
+
+.beneficios .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+@media (max-width: 768px) {
+  .beneficios .row {
+    flex-direction: column;
+    align-items: center; /* Centrar elementos en el eje X */
+  }
+
+  .beneficios .contenedor {
+    width: 100%; /* Ocupa todo el ancho disponible en dispositivos móviles */
+    max-width: 250px; /* Máximo ancho para mantener consistencia */
+    margin-bottom: 20px; /* Espacio entre elementos */
+  }
+}
+/*--------------------------------------------------------------
+# Mas fechas
+--------------------------------------------------------------*/
+.fechas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.fechas .section-title p{
+  font-family: "Inter";
+}
+.fechas .section-title span{
+  font-family: "Outfit";
+  color: #48B7D9;
+  font-weight: 400;
+}
+
+.fechas .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fechas .column .head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+  background-color: #F5EFE8;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.15);
+  width: 100%;
+  height: 70px;
+  color: #F4B609;
+}
+
+.fechas .column .head p {
+  text-align: center;
+  font-family: "Outfit";
+  font-size: 18px;
+  font-weight: 400;
+  margin: auto 0;
+  width: 410px;
+}
+
+.fechas .column .head img {
+  width: 45px;
+  margin: auto 185px;
+}
+
+.fechas .column .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 15px;
+  width: 100%;
+  height: 70px;
+  color: #0D0D0D;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.15);
+}
+
+.fechas .column .info p{
+  text-align: center;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto 100px;
+  width: 210px;
+}
+
+.fechas .todas-fechas{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+.fechas .btn-fechas {
+	font-family: "Outfit", sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+	line-height: 1;
+	margin: 10px;
+	color: #F5EFE8;
+	border: 2px solid #48B7D9;
+	background: #48B7D9;
+}
+
+.fechas .btn-fechas:hover {
+	background: #298fae;
+	border-color: #298fae;
+	color: #F5EFE8;
+}
+@media (max-width: 768px) {
+  .fechas {
+    max-width: 100vw;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .fechas .column .head {
+    max-width: 100vw;
+    justify-self: center;
+  }
+  .fechas .column .head img {
+    margin: 0 80px 0 0;
+  }
+  .fechas .column .head .reloj {
+    margin: 0 0 0 0;
+  }
+  .fechas .column .head p {
+    margin: 0 -120px 0 -180px ;
+  }
+  .fechas .column .info {
+    height: 120px;
+    font-size: 12px;
+  }
+  .fechas .column .info p{
+    max-width: 100vw;
+    margin: 0;
+    width: 100px;
+  }
+
+}
+/*--------------------------------------------------------------
+# Formulario
+--------------------------------------------------------------*/
+.formulario {
+  padding: 0;
+  background: #0D0D0D; /* Color de fondo oscuro para la sección */
+  color: #fff; /* Color de texto blanco para el contenido */
+  position: relative; /* Asegura que la posición sea relativa para los elementos internos */
+  height: 600px;
+}
+
+.formulario .container {
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos al final del contenedor */
+  align-items: center;
+  flex-direction: row;
+  position: relative; /* Asegura que la posición sea relativa para los elementos internos */
+}
+
+.formulario .row {
+  flex-direction: column;
+}
+.formulario form {
+  margin-top: -20px;
+}
+.formulario form input{
+  margin-top: 20px;
+  width: 500px;
+}
+
+.formulario .section-image-aside-2-img {
+  width: 900px; /* Ancho del 50% del viewport */
+  height: 600px; /* Alto completo del contenedor */
+  background-size: cover; /* Cubre el fondo con la imagen */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat;
+  position: absolute; /* Posición absoluta para la imagen */
+  top: 0; /* Se sitúa en la parte superior */
+  left: -205px; /* Se sitúa en el lado izquierdo */
+}
+
+.formulario .contenido {
+  margin-top: 45px;
+  padding-left: 30px; /* Espaciado interior del contenido */
+  width: calc(50vw - 60px); /* Ancho calculado para el contenido */
+  position: relative; /* Asegura que la posición sea relativa para los elementos internos */
+  z-index: 1; /* Coloca el contenido sobre la imagen de fondo */
+  width: 600px;
+}
+
+.formulario .contenido h3 {
+  font-family: "Sansita Swashed";
+  font-size: 35px;
+  font-weight: medium;
+  text-transform: initial;
+  margin-bottom: 10px;
+  width: 500px;
+}
+
+.formulario .contenido p {
+  font-family: "Inter";
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  width: 500px;
+}
+
+.formulario form{
+  width: 500px;
+  font-family: "Outfit";
+}
+
+.formulario .php-email-form .sent-message {
+  display: none;
+  background: #F4B609;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.formulario .php-email-form .loading {
+  display: none;
+  background: #F5EFE8;
+  text-align: center;
+  padding: 15px;
+}
+
+.formulario .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #F4B609;
+  border-top-color: #F5EFE8;
+  animation: animate-loading 1s linear infinite;
+}
+
+.formulario .php-email-form input,
+.formulario .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  height: auto;
+  padding: 10px 15px;
+}
+
+.formulario .php-email-form input:focus,
+.formulario .php-email-form textarea:focus {
+  border-color: #48B7D9;
+}
+
+/* Estilo para el select */
+.formulario .php-email-form select {
+  display: flex;
+  width: 500px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #48B7D9;
+  border-radius: 0;
+  background-color: #fff;
+  color: #555;
+  appearance: none; /* Oculta el estilo por defecto del navegador */
+}
+
+
+/* Estilo para el borde cuando el select está enfocado */
+.formulario .php-email-form select:focus {
+  border-color: #48B7D9;
+  border: none;
+  outline: none; /* Quita el outline predeterminado en algunos navegadores */
+}
+
+
+.formulario .text-center {
+  margin-top: 20px;
+  display: flex;
+  justify-content: left;
+  margin-top: 30px;
+}
+
+.formulario .php-email-form button[type=submit] {
+  background: #48B7D9;
+  font-family: "Outfit";
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  padding: 5px 30px ;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.formulario .php-email-form button[type=submit]:hover {
+  background: #298fae;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768) {
+  .formulario{
+    max-width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .formulario .section-image-aside-2-img {
+    display: none; /* Oculta la imagen en dispositivos móviles */
+  }
+
+  .formulario .contenido {
+  max-width: 100vw; /* Ancho completo en dispositivos móviles */
+    margin-left: 0; /* Sin margen izquierdo en dispositivos móviles */
+  }
+  .formulario .php-email-form select {
+    width: 200px;
+  }
+  .formulario form input{
+    width: 200px;
+  }
+  .formulario .container {
+    max-width: 100vw;
+  }
+  .formulario .row {
+    max-width: 100vw;
+    align-items: center;
+    justify-self: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# otros cursos
+--------------------------------------------------------------*/
+.otros-cursos{
+  margin-top: 20px;
+  height: auto;
+}
+.otros-cursos .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.otros-cursos .section-title {
+  position: relative;
+  z-index: 2;
+}
+
+.otros-cursos .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 30px;
+  background: #F5EFE8;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  z-index: 3;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.otros-cursos .box img {
+  width: 200px;
+  margin-top: -30px;
+  margin-bottom: 5px;
+}
+
+.otros-cursos .box h3 {
+  font-family: "Sansita Swashed";
+  padding: 15px;
+  margin-top: 0;
+  font-size: 24px;
+  color: #0D0D0D;
+  width: 350px;
+}
+
+.otros-cursos .box h4 {
+  color: #48B7D9 ;
+  font-family: "Inter";
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.otros-cursos .box h4 sup {
+  font-size: 18px;
+  top: -15px;
+  left: -3px;
+}
+
+.otros-cursos .box span {
+  position:center center;
+  font-family: "Outfit";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.otros-cursos .box p {
+  margin-top: -10px;
+  width: 300px;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  color: color-mix(in srgb, #0D0D0D, transparent 60%);
+}
+.otros-cursos .box .semanas{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+} 
+
+.otros-cursos .box .semanas span {
+  font-family: "Outfit";
+  font-size: 18px;
+  font-weight: 450;
+  color: #0D0D0D;
+  margin-top: 8px;
+}
+.otros-cursos .box .semanas img{
+  width: 30px;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.otros-cursos .box .btn-wrap {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.otros-cursos .box .btn-buy {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 14px;
+  background: #F5EFE8;
+  border: 2px solid #48B7D9;
+  border-radius: 30px;
+  color: #48B7D9;
+  transition: 0.3s;
+  padding: 6px 20px;
+}
+
+.otros-cursos .box .btn-buy:hover {
+  background: #298fae;
+  border-color: #298fae;
+  color: #F5EFE8;
+}
+
+.otros-cursos .box:hover{
+  border: 4px solid #F4B609;
+}
+
+@media (max-width: 768px) {
+  .otros-cursos {
+    flex-direction: column;
+    margin-top: -10px;
+    max-width: 100vw;
+  }
+  .otros-cursos .row {
+    margin-top: 10px;
+    flex-direction: column;
+    max-width: 100vw;
+    align-items: center;
+  }
+  .otros-cursos .box {
+  max-width: 100vw;
+    margin-top: 10px;
+    max-width: 100vw;
+  }
+  .otros-cursos .box h4 {
+    font-size: 40px;
+  }
+  .otros-cursos .box:hover{
+  max-width: 100vw;
+  }
+}
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+.faq .faq-list {
+  padding: 0 10px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li+li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #F5EFE8;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #9cdc66;
+}
+
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+  margin-left: 50px;
+  width: 1100px;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #343a40;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #48B7D9;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
+
+
+
